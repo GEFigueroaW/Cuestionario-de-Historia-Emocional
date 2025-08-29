@@ -1,1 +1,72 @@
-RECREAR CONTENIDO COMPLETO
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario de Historia Emocional</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🧐 Cuestionario de Historia Emocional</h1>
+    <p class="intro">Este cuestionario te ayudará a explorar posibles heridas emocionales que podrían estar afectando tu vida. Las respuestas son confidenciales y útiles para tu proceso terapéutico.</p>
+
+    <form id="testForm">
+      <div class="section">
+        <h2>1️⃣ Síntomas de trauma</h2>
+        <p>Del 1 (nunca) al 5 (muy frecuente), ¿con qué frecuencia experimentas lo siguiente?</p>
+        <div class="question">Me cuesta confiar en los demás. <input type="range" min="1" max="5" value="1" name="q1" /></div>
+        <div class="question">Reacciono exageradamente a ciertas situaciones. <input type="range" min="1" max="5" value="1" name="q2" /></div>
+        <div class="question">Evito hablar de ciertos temas de mi pasado. <input type="range" min="1" max="5" value="1" name="q3" /></div>
+        <div class="question">Siento culpa o vergüenza sin motivo claro. <input type="range" min="1" max="5" value="1" name="q4" /></div>
+        <div class="question">Tengo recuerdos intrusivos o sueños repetitivos. <input type="range" min="1" max="5" value="1" name="q5" /></div>
+      </div>
+
+      <div class="section">
+        <h2>2️⃣ Etapa probable del trauma</h2>
+        <label><input type="checkbox" name="etapa" value="Infancia"> Infancia (0–12 años)</label><br />
+        <label><input type="checkbox" name="etapa" value="Adolescencia"> Adolescencia (13–19 años)</label><br />
+        <label><input type="checkbox" name="etapa" value="Adultez temprana"> Adultez temprana (20–35 años)</label><br />
+        <label><input type="checkbox" name="etapa" value="Reciente"> Eventos recientes (últimos años)</label>
+      </div>
+
+      <div class="section">
+        <h2>3️⃣ Posibles causas</h2>
+        <label><input type="checkbox" name="causa" value="Rechazo"> Rechazo</label><br />
+        <label><input type="checkbox" name="causa" value="Abandono"> Abandono</label><br />
+        <label><input type="checkbox" name="causa" value="Abuso verbal o físico"> Abuso verbal o físico</label><br />
+        <label><input type="checkbox" name="causa" value="Violencia o trauma directo"> Violencia o trauma directo</label><br />
+        <label><input type="checkbox" name="causa" value="Humillación"> Humillación</label><br />
+        <label><input type="checkbox" name="causa" value="Negligencia emocional"> Negligencia emocional</label>
+      </div>
+
+      <div class="section">
+        <h2>4️⃣ Áreas de impacto</h2>
+        <label><input type="checkbox" name="area" value="Relaciones personales"> Relaciones personales</label><br />
+        <label><input type="checkbox" name="area" value="Autoestima"> Autoestima</label><br />
+        <label><input type="checkbox" name="area" value="Seguridad emocional"> Seguridad emocional</label><br />
+        <label><input type="checkbox" name="area" value="Trabajo o metas"> Trabajo o metas</label><br />
+        <label><input type="checkbox" name="area" value="Salud física"> Salud física</label>
+      </div>
+
+      <div class="section">
+        <h2>5️⃣ Reflexión libre (opcional)</h2>
+        <textarea name="reflexion" rows="5" placeholder="¿Qué herida sientes que cargas contigo desde hace tiempo?"></textarea>
+      </div>
+
+      <button type="button" id="submitBtn">Ver resultado</button>
+    </form>
+
+    <div id="result" class="result" style="display:none;">
+      <h2>📝 Resultado</h2>
+      <div id="charts"></div>
+      <div id="summary"></div>
+      <button id="downloadBtn">📅 Descargar PDF</button>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
