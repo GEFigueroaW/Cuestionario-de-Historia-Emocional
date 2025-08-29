@@ -3,65 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cuestionario de Historia Emocional</title>
+  <title>Cuestionario de Historia Emocional (Versión Clínica)</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>🧐 Cuestionario de Historia Emocional</h1>
-    <p class="intro">Este cuestionario te ayudará a explorar posibles heridas emocionales que podrían estar afectando tu vida. Las respuestas son confidenciales y útiles para tu proceso terapéutico.</p>
+    <h1>🧐 Cuestionario de Historia Emocional – Análisis Profundo</h1>
+    <p class="intro">Este test busca detectar posibles heridas emocionales profundas, su origen, impacto y etapa de vida. Las respuestas son confidenciales y útiles para tu proceso terapéutico.</p>
 
     <form id="testForm">
       <div class="section">
-        <h2>1️⃣ Síntomas de trauma</h2>
-        <p>Del 1 (nunca) al 5 (muy frecuente), ¿con qué frecuencia experimentas lo siguiente?</p>
-        <div class="question">Me cuesta confiar en los demás. <input type="range" min="1" max="5" value="1" name="q1" /></div>
-        <div class="question">Reacciono exageradamente a ciertas situaciones. <input type="range" min="1" max="5" value="1" name="q2" /></div>
-        <div class="question">Evito hablar de ciertos temas de mi pasado. <input type="range" min="1" max="5" value="1" name="q3" /></div>
-        <div class="question">Siento culpa o vergüenza sin motivo claro. <input type="range" min="1" max="5" value="1" name="q4" /></div>
-        <div class="question">Tengo recuerdos intrusivos o sueños repetitivos. <input type="range" min="1" max="5" value="1" name="q5" /></div>
+        <h2>Parte 1: Evalúa cada afirmación del 1 (nunca) al 5 (casi siempre)</h2>
+        <div class="question">1. Me cuesta sentir que encajo en grupos o relaciones. <input type="range" name="q1" min="1" max="5" value="1" /></div>
+        <div class="question">2. A menudo pienso que sería mejor desaparecer o no estar. <input type="range" name="q2" min="1" max="5" value="1" /></div>
+        <div class="question">3. Siento que no tengo derecho a pedir ayuda. <input type="range" name="q3" min="1" max="5" value="1" /></div>
+        <div class="question">4. Me siento invisible, incluso con personas cercanas. <input type="range" name="q4" min="1" max="5" value="1" /></div>
+
+        <div class="question">5. Me da miedo que las personas me dejen o se olviden de mí. <input type="range" name="q5" min="1" max="5" value="1" /></div>
+        <div class="question">6. Prefiero estar mal acompañado que solo. <input type="range" name="q6" min="1" max="5" value="1" /></div>
+        <div class="question">7. Cuando alguien se aleja, siento que hice algo mal. <input type="range" name="q7" min="1" max="5" value="1" /></div>
+        <div class="question">8. Me cuesta confiar en que alguien estará para mí a largo plazo. <input type="range" name="q8" min="1" max="5" value="1" /></div>
+
+        <div class="question">9. Me siento culpable incluso cuando no hice nada malo. <input type="range" name="q9" min="1" max="5" value="1" /></div>
+        <div class="question">10. Me avergüenzo fácilmente de lo que soy o hago. <input type="range" name="q10" min="1" max="5" value="1" /></div>
+        <div class="question">11. Me trato mal a mí mismo en mi diálogo interno. <input type="range" name="q11" min="1" max="5" value="1" /></div>
+        <div class="question">12. Me cuesta recibir elogios o sentirme digno de cosas buenas. <input type="range" name="q12" min="1" max="5" value="1" /></div>
+
+        <div class="question">13. Me cuesta confiar plenamente en los demás. <input type="range" name="q13" min="1" max="5" value="1" /></div>
+        <div class="question">14. Prefiero hacer las cosas solo para que no me fallen. <input type="range" name="q14" min="1" max="5" value="1" /></div>
+        <div class="question">15. Me enojo cuando alguien no cumple lo que promete. <input type="range" name="q15" min="1" max="5" value="1" /></div>
+        <div class="question">16. Me cuesta ceder el control en relaciones o decisiones. <input type="range" name="q16" min="1" max="5" value="1" /></div>
+
+        <div class="question">17. Me exijo mucho a mí mismo, más que a los demás. <input type="range" name="q17" min="1" max="5" value="1" /></div>
+        <div class="question">18. Me molestan profundamente los errores, incluso los pequeños. <input type="range" name="q18" min="1" max="5" value="1" /></div>
+        <div class="question">19. Siento que no importa cuánto me esfuerce, nunca es suficiente. <input type="range" name="q19" min="1" max="5" value="1" /></div>
+        <div class="question">20. Me cuesta mostrar mis emociones, las veo como debilidad. <input type="range" name="q20" min="1" max="5" value="1" /></div>
       </div>
 
       <div class="section">
-        <h2>2️⃣ Etapa probable del trauma</h2>
-        <label><input type="checkbox" name="etapa" value="Infancia"> Infancia (0–12 años)</label><br />
-        <label><input type="checkbox" name="etapa" value="Adolescencia"> Adolescencia (13–19 años)</label><br />
-        <label><input type="checkbox" name="etapa" value="Adultez temprana"> Adultez temprana (20–35 años)</label><br />
-        <label><input type="checkbox" name="etapa" value="Reciente"> Eventos recientes (últimos años)</label>
-      </div>
-
-      <div class="section">
-        <h2>3️⃣ Posibles causas</h2>
-        <label><input type="checkbox" name="causa" value="Rechazo"> Rechazo</label><br />
-        <label><input type="checkbox" name="causa" value="Abandono"> Abandono</label><br />
-        <label><input type="checkbox" name="causa" value="Abuso verbal o físico"> Abuso verbal o físico</label><br />
-        <label><input type="checkbox" name="causa" value="Violencia o trauma directo"> Violencia o trauma directo</label><br />
-        <label><input type="checkbox" name="causa" value="Humillación"> Humillación</label><br />
-        <label><input type="checkbox" name="causa" value="Negligencia emocional"> Negligencia emocional</label>
-      </div>
-
-      <div class="section">
-        <h2>4️⃣ Áreas de impacto</h2>
-        <label><input type="checkbox" name="area" value="Relaciones personales"> Relaciones personales</label><br />
-        <label><input type="checkbox" name="area" value="Autoestima"> Autoestima</label><br />
-        <label><input type="checkbox" name="area" value="Seguridad emocional"> Seguridad emocional</label><br />
-        <label><input type="checkbox" name="area" value="Trabajo o metas"> Trabajo o metas</label><br />
-        <label><input type="checkbox" name="area" value="Salud física"> Salud física</label>
-      </div>
-
-      <div class="section">
-        <h2>5️⃣ Reflexión libre (opcional)</h2>
-        <textarea name="reflexion" rows="5" placeholder="¿Qué herida sientes que cargas contigo desde hace tiempo?"></textarea>
+        <h2>Parte 2: Reflexión libre</h2>
+        <textarea name="reflexion" rows="5" placeholder="¿Qué herida sientes que ha marcado tu vida?
+¿Qué necesitabas y no recibiste? ¿Qué te ayudaría a sanar eso hoy?"></textarea>
       </div>
 
       <button type="button" id="submitBtn">Ver resultado</button>
     </form>
 
     <div id="result" class="result" style="display:none;">
-      <h2>📝 Resultado</h2>
+      <h2>📝 Resultado del Análisis</h2>
       <div id="charts"></div>
       <div id="summary"></div>
       <button id="downloadBtn">📅 Descargar PDF</button>
